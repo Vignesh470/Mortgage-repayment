@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+#calculator {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: min-content min-content auto;
+}
+
+#calculator > :nth-child(1) {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#calculator > :nth-child(2) {
+    text-decoration: underline;
+    color: hsl(200, 24%, 40%);
+    font-weight: 700;
+}
+
+#calculator > :is(:nth-child(1), :nth-child(2)) {
+    margin-block: 0.5rem;
+}
+
+#reset {
+    border: 0;
+    font-size: 1rem;
+    background-color: transparent;
+    width: fit-content;
+    padding-inline: 0;
+}
+
+#calculator > #form {
+    display: grid;
+    grid-template-columns: auto;
+    /* grid-template-rows: repeat(auto, 5); */
+    grid-template-rows: auto;
+    row-gap: 0.5rem;
+    margin-block: 1rem;
+}
+
+#form > :is(:nth-child(1), :nth-child(2), :nth-child(3)) {
+    position: relative;
+}
+
+#form > :nth-child(1) > input {
+    padding-inline-start: 3rem;
+    /* font-size: 1.2rem; */
+    font-weight: 700;
+}
+
+#form > :is(:nth-child(2), :nth-child(3)) > input {
+    padding-inline-start: 1rem;
+    font-weight: 700;
+}
+
+input {
+    cursor: pointer;
+}
+
+input:focus-visible {
+    outline-color: hsl(61, 70%, 52%);
+}
+
+.mortgage-type div:has(input[type=radio]:checked) {
+    background-color: hsl(60, 72%, 93%);
+    outline: hsl(61, 70%, 52%) solid 0.15rem;
+    border-color: transparent;
+}
+
+#form > div:has(input:focus-visible) span {
+    background-color: hsl(61, 70%, 52%);
+}
+
+input[type=radio] {
+    appearance: none;
+    position: relative;
+}
+
+input[type=radio]::before {
+    content: '';
+    position: absolute;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    border: 0.2rem solid white;
+    outline: hsl(0, 50%, 30%) solid 0.1rem;
+}
+
+.mortgage-type div:has(input[type=radio]:checked) input[type=radio]::before {
+    background-color: hsl(61, 70%, 52%);
+    outline-color: hsl(61, 70%, 52%);
+    outline-width: 0.15rem;
+}
+
+span {
+    position: absolute;
+    padding: 0.7rem 1rem;
+    height: 3rem;
+    background-color: hsl(202, 86%, 94%);
+    color: hsl(200, 24%, 40%);
+    font-weight: 700;
+}
+
+#form > :nth-child(1) > span {
+    translate: 0.1rem 0.6rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+#form > :nth-child(2) > span {
+    translate: -4.75rem 0.6rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+#form > :nth-child(3) > span {
+    translate: -3.15rem 0.6rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+#form > div > input {
+    margin-block-start: 0.5rem;
+    width: 100%;
+    padding-block: 1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid hsla(0, 0%, 0%, 0.452);
+}
+
+#form > div > input:hover {
+    border: 0.1rem solid hsla(0, 0%, 0%, 0.852);
+}
+
+#form > div > label {
+    color: hsl(200, 24%, 40%);
+    font-weight: 700;
+}
+
+.mortgage-type > div {
+    display: flex;
+    padding: 0.8rem;
+    margin-block-end: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    cursor: pointer;
+    /* transition-delay: 100ms;
+    transition-duration: 200ms; */
+}
+
+.mortgage-type > div:hover {
+    border: 1px solid hsl(61, 70%, 52%);
+}
+
+.mortgage-type > p:not(.queryError) {
+    color: hsl(200, 24%, 40%);
+    font-weight: 700;
+}
+
+.mortgage-type > div > input[type=radio] {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-block: auto;
+    cursor: pointer;
+}
+
+.mortgage-type > div > label {
+    font-weight: 700;
+    /* font-size: 1.1rem; */
+    padding-inline-start: 1rem;
+    cursor: pointer;
+}
+
+#form #submit {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    border-radius: 10rem;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    background-color: hsl(61, 70%, 52%);
+    cursor: pointer;
+    transition-delay: 100ms;
+    transition-duration: 200ms;
+}
+
+#form #submit:hover {
+    background-color: hsl(61, 70%, 76%);
+}
+
+#form #submit > img {
+    margin-inline-end: 1rem;
+}
+
+#form #submit + label {
+    font-size: 1.2rem;
+}
+
+.error, .queryError {
+    margin-block: 0.2rem 0;
+    color: hsl(0, 66%, 54%);
+    font-size: 0.9rem;
+}
+
+.errClass {
+    background-color: hsl(0, 66%, 54%);
+    color: hsl(0, 0%, 100%);
+}
+
+.errBorder {
+    border-color: hsl(4, 69%, 50%);
+}
+
+.empty {
+    display: block;
+    background-color: hsl(202, 55%, 16%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding-block: 2rem;
+}
+
+.empty :nth-child(2) {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.empty :nth-child(3) {
+    color: hsl(203, 41%, 72%);
+    margin-block-end: 0;    
+}
+
+.complete {
+    display: none;
+    background-color: hsl(202, 55%, 16%);
+    color: hsl(0, 0%, 100%);
+    padding: 1.5rem;
+}
+
+.complete > :nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.complete > :nth-child(2), .repayment > :is(:nth-child(1), :nth-child(4)) {
+    color: hsl(203, 41%, 72%);
+}
+
+.repayment > :is(:nth-child(1), :nth-child(4)) {
+    margin: 0;
+}
+
+.repayment {
+    background-color: hsl(202, 56%, 12%);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-top: 0.3rem solid hsl(61, 70%, 52%);
+}
+
+.monthly-repay {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-block: 0.5rem;
+    color: hsl(61, 70%, 52%);
+}
+
+.term-total {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+    margin-block: 0.5rem;
+}
+
+@media (min-width: 600px) {
+    body {
+        min-height: 100vh;
+        background-color: hsl(202, 86%, 94%);
+        display: grid;
+    }
+
+    .container {
+        border-radius: 1rem;
+        width: 80%;
+        margin: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    #calculator {
+        background-color: hsl(0, 0%, 100%);
+        padding: 2rem;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        grid-area: 1/1/-2/-2;
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    #calculator > :nth-child(1) {
+        grid-area: 1/1/2/2;
+    }
+
+    #calculator > :nth-child(2) {
+        grid-area: 1/2/2/3;
+        place-self: end;
+    }
+
+    #calculator > :nth-child(3) {
+        grid-area: 2/1/3/3;
+    }
+
+    .empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-inline: 2rem;
+    }
+
+    .empty > * {
+        align-self: center;
+    }
+
+    .empty > :nth-child(2) {
+        margin-block-end: 0;
+    }
+
+    .empty, .complete {
+        border-radius: 0 1rem 1rem 5rem;
+    }
+
+    #result {
+        display: grid;
+        grid-area: 1/2/-2/-2;
+        border-radius: 0 0 1rem 0;
+        position: relative;  
+    }
+
+    #result::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 0 1rem 1rem 0;
+        z-index: -1;
+    }
+
+    .container > :nth-child(3) {
+        grid-area: 2/1/-1/-1;
+        background-color: hsl(202, 86%, 94%);
+        padding-block: 1rem;
+    }
+
+    #form {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(1fr, 4);
+        column-gap: 1rem;
+    }
+
+    #form :nth-child(1) {
+        grid-area: 1/1/2/3;
+    }
+
+    #form :nth-child(2) {
+        grid-area: 2/1/3/2;
+    }
+
+    #form :nth-child(3) {
+        grid-area: 2/2/3/3;
+    }
+
+    .mortgage-type {
+        grid-area: 3/1/4/3;
+    }
+
+    #form :nth-child(5) {
+        grid-area: 4/1/5/3;
+    }
+
+    #form #submit {
+        width: 75%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 949px) {
+    .container {
+        margin-block: 5vh;
+        grid-template-columns: auto;
+    }
+
+    .container > :nth-child(3) {
+        grid-area: 3/1/-1/-1;
+    }
+
+    #calculator {
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    #form > :nth-child(5) {
+        text-align: center;
+    }
+    
+    #form #submit {
+        width: 95%;
+    }
+
+    #result {
+        grid-area: 2/2/-2/-2;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    .empty, .complete {
+        border-radius: 0 0 1rem 1rem;
+    }
+}
