@@ -29,14 +29,16 @@ Users should be able to:
 
 ### Screenshot
 
+Desktop Solution:
 ![Desktop Solution:](./design/desktop%20solution.jpg)
 
+Mobile Solution:
 ![Mobile Solution:](./design/mobile%20solution.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Link](https://www.frontendmentor.io/solutions/mortgage-repayment-calculator-made-with-javascript-with-reset-option-53ztBUV3MX)
+- Live Site URL: [Link](https://vignesh470.github.io/Mortgage-repayment/)
 
 ## My process
 
